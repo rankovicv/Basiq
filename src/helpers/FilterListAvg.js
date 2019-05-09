@@ -1,11 +1,10 @@
 const getAvgForTransactionListByFilter = function (list, filter, forFilterObejct) {
   filterlist = [];
 
-  for (i = 0; i < list.length; i++) {
-
-    var filtering = list[i][filter];
+  list.forEach(function (transaction) {
+    var filtering = transaction[filter];
     if (forFilterObejct && filtering) {
-      filtering = list[i][filter][forFilterObejct];
+      filtering = transaction[filter][forFilterObejct];
     }
 
     if (filtering) {
@@ -14,12 +13,12 @@ const getAvgForTransactionListByFilter = function (list, filter, forFilterObejct
       })
 
       if (!existing) {
-        filterlist.push(new FilterObject(filtering, list[i].amount))
+        filterlist.push(new FilterObject(filtering, transaction.amount))
       } else {
-        existing.count(parseFloat(list[i].amount));
+        existing.count(parseFloat(transaction.amount));
       }
     }
-  }
+  })
 
   return filterlist;
 
@@ -27,12 +26,12 @@ const getAvgForTransactionListByFilter = function (list, filter, forFilterObejct
 
 const FilterObject = function (filter, amount) {
   this.type = filter,
-  this.amount = Math.abs(parseFloat(amount)),
-  this.numerOfTransactions = 1,
+    this.amount = Math.abs(parseFloat(amount)),
+    this.numerOfTransactions = 1,
 
-  this.average = function () {
-    return this.amount / this.numerOfTransactions;
-  }
+    this.average = function () {
+      return this.amount / this.numerOfTransactions;
+    }
 
   this.count = function (amount) {
     this.amount += Math.abs(amount);

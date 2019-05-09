@@ -16,15 +16,15 @@ FilterBuilder = BasiqSDK.FilterBuilder;
 
         subclasses = transactions.getAllSubClassInfo();
 
-        for (i = 0; i < subclasses.length; i++) {
-            console.log(subclasses[i].print())
-        }
+        subclasses.forEach(function (subclass) {
+            console.log(subclass.print());
+        })
 
         const secondSolution = FilterListAvg.getAvgForTransactionListByFilter(transactions.data, "subClass", "code");
 
-        for (i = 0; i < secondSolution.length; i++) {
-            console.log(`Code: ${secondSolution[i].type}, Avg:  ${secondSolution[i].average()}`)
-        }
+        secondSolution.forEach(function (item) {
+            console.log(`Code: ${item.type}, Avg:  ${item.average()}`);
+        })
 
 
     } catch (e) {
