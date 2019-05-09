@@ -1,0 +1,38 @@
+{
+  "name": "basiq-sdk-nodejs",
+  "version": "1.1.2",
+  "description": "Node.js SDK Package for Basiq's API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/basiqio/basiq-sdk-nodejs.git"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack && uglifyjs --compress --mangle --output dist/index.js -- dist/index.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "basiq",
+    "sdk",
+    "nodejs"
+  ],
+  "files": [
+    "dist/index.js",
+    "dist/index.js.map"
+  ],
+  "author": "Basiq.io",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^5.5.2",
+    "mocha": "^6.1.4",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "prettier": "^1.16.1",
+    "prettier-webpack-plugin": "^1.2.0",
+    "uglify-es": "^3.3.9",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^3.2.1"
+  }
+}
