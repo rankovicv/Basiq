@@ -1,4 +1,5 @@
 const BasiqSDK = require("./index");
+const FilterListAvg = require("./helpers/FilterListAvg");
 FilterBuilder = BasiqSDK.FilterBuilder;
 
 (async function () {
@@ -17,6 +18,12 @@ FilterBuilder = BasiqSDK.FilterBuilder;
 
         for (i = 0; i < subclasses.length; i++) {
             console.log(subclasses[i].print())
+        }
+
+        const secondSolution = FilterListAvg.getAvgForTransactionListByFilter(transactions.data, "subClass", "code");
+
+        for (i = 0; i < secondSolution.length; i++) {
+            console.log(`Code: ${secondSolution[i].type}, Avg:  ${secondSolution[i].average()}`)
         }
 
 

@@ -277,6 +277,28 @@
                 "institution": "https://au-api.basiq.io/institutions/AU00000",
                 "connection": null
             }
+        },
+        {
+            "type": "transaction",
+            "id": "3d798a23-b404-49ca-ad63-8314e73845aa",
+            "status": "posted",
+            "description": "loan installment   loan repayment from a/c 12-999-000",
+            "amount": "1280.13",
+            "account": "ea2e8367-49c9-4757-8325-6c68e36626a8",
+            "balance": "",
+            "direction": "credit",
+            "class": "transfer",
+            "institution": "AU00000",
+            "connection": "c3a66cbf-abf5-464f-be41-577e1539374f",
+            "transactionDate": "",
+            "postDate": "2018-12-03T08:38:35Z",
+            "subClass": null,
+            "links": {
+                "self": "https://au-api.basiq.io/users/07a23aba-1a00-4508-9b91-993be92669a6/transactions/3d798a23-b404-49ca-ad63-8314e73845aa",
+                "account": "https://au-api.basiq.io/users/07a23aba-1a00-4508-9b91-993be92669a6/accounts/ea2e8367-49c9-4757-8325-6c68e36626a8",
+                "institution": "https://au-api.basiq.io/institutions/AU00000",
+                "connection": null
+            }
         }
     ],
     "links": {

@@ -1,13 +1,13 @@
-var TransactionList = require('../src/services/TransactionList')
-var assert = require('chai').assert;
-var testData = require('./test');
+var TransactionList = require('../src/services/TransactionList'),
+ assert = require('chai').assert,
+ testData = require('./test');
 
 describe('TransactionList', function(){
 
   it('should return a TransactionList created', function() {
     var list = new TransactionList(testData, 'string');
 
-    assert.lengthOf(list.data, 11, 'Array contains 11 objects of transaction');
+    assert.lengthOf(list.data, 12, 'Array contains 12 objects of transaction');
     assert.isNotEmpty(list.links);
   })
 
